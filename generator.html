@@ -36,30 +36,29 @@
                 </label>
 
                 <input
-                    type="text"
-                    id="playerName"
-                    placeholder="e.g. Manoj"
-                    autocomplete="off"
-                >
+    type="text"
+    id="playerName"
+    autocomplete="off"
+>
 
                 <label for="amount">
                     Amount
                 </label>
 
                 <input
-                    type="number"
-                    id="amount"
-                    placeholder="e.g. 446"
-                    min="1"
-                    step="0.01"
-                >
+    type="number"
+    id="amount"
+    min="1"
+    step="0.01"
+>
 
-                <button
-                    id="generateButton"
-                    class="pay-button"
-                >
-                    Generate Payment Link
-                </button>
+               <button
+    id="generateButton"
+    class="pay-button"
+>
+    <span class="button-icon">↗</span>
+    <span>Generate Payment Link</span>
+</button>
 
             </div>
 
@@ -77,21 +76,23 @@
                     class="generated-link"
                 ></div>
 
-                <button
-                    id="copyLinkButton"
-                    class="secondary-button"
-                >
-                    Copy Payment Link
-                </button>
+               <button
+    id="copyLinkButton"
+    class="secondary-button"
+>
+    <span class="button-icon">▣</span>
+    <span>Copy Payment Link</span>
+</button>
 
                 <a
-                    id="openLinkButton"
-                    class="secondary-button open-button"
-                    href="#"
-                    target="_blank"
-                >
-                    Open Payment Page
-                </a>
+    id="openLinkButton"
+    class="secondary-button open-button"
+    href="#"
+    target="_blank"
+>
+    <span class="button-icon">↗</span>
+    <span>Open Payment Page</span>
+</a>
 
                 <div
                     id="message"
