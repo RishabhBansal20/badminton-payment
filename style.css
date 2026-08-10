@@ -221,3 +221,85 @@ h1 {
     }
 
 }
+
+/* Generator page */
+
+.form-section {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.form-section label {
+    display: block;
+
+    margin-top: 18px;
+    margin-bottom: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.form-section input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.form-section input:focus {
+    border-color: #111827;
+}
+
+.form-section .pay-button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.result {
+    display: none;
+
+    margin-top: 28px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.generated-link {
+    margin-top: 8px;
+    margin-bottom: 14px;
+
+    padding: 12px;
+
+    background: #f3f4f6;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    color: #374151;
+
+    word-break: break-all;
+
+    text-align: left;
+}
+
+.open-button {
+    display: block;
+
+    margin-top: 10px;
+
+    text-decoration: none;
+
+    color: #111827;
+}

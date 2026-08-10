@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Generate Payment Link</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="payment-card">
+
+            <div class="logo">
+                🏸
+            </div>
+
+            <h1>Generate Payment Link</h1>
+
+            <p class="subtitle">
+                Create a payment link for your badminton split
+            </p>
+
+            <div class="form-section">
+
+                <label for="playerName">
+                    Player Name
+                </label>
+
+                <input
+                    type="text"
+                    id="playerName"
+                    placeholder="e.g. Manoj"
+                    autocomplete="off"
+                >
+
+                <label for="amount">
+                    Amount
+                </label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="e.g. 446"
+                    min="1"
+                    step="0.01"
+                >
+
+                <button
+                    id="generateButton"
+                    class="pay-button"
+                >
+                    Generate Payment Link
+                </button>
+
+            </div>
+
+            <div
+                id="result"
+                class="result"
+            >
+
+                <p class="label">
+                    Payment Link
+                </p>
+
+                <div
+                    id="generatedLink"
+                    class="generated-link"
+                ></div>
+
+                <button
+                    id="copyLinkButton"
+                    class="secondary-button"
+                >
+                    Copy Payment Link
+                </button>
+
+                <a
+                    id="openLinkButton"
+                    class="secondary-button open-button"
+                    href="#"
+                    target="_blank"
+                >
+                    Open Payment Page
+                </a>
+
+                <div
+                    id="message"
+                    class="message"
+                ></div>
+
+            </div>
+
+            <p class="footer">
+                UPI payment • No payment gateway
+            </p>
+
+        </div>
+
+    </main>
+
+    <script src="generator.js"></script>
+
+</body>
+</html>

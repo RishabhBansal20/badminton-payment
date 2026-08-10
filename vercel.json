@@ -1,8 +1,12 @@
 {
-    "rewrites": [
-        {
-            "source": "/pay",
-            "destination": "/"
-        }
-    ]
+  "rewrites": [
+    {
+      "source": "/pay",
+      "destination": "/"
+    },
+    {
+      "source": "/generate",
+      "destination": "/generator.html"
+    }
+  ]
 }
