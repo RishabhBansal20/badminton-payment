@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Badminton Payment</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="payment-card">
+
+            <div class="logo">
+                🏸
+            </div>
+
+            <h1>Badminton Payment</h1>
+
+            <p class="subtitle">
+                Court expense split
+            </p>
+
+            <div class="player-section">
+
+                <p class="label">Payment from</p>
+
+                <h2 id="playerName">Loading...</h2>
+
+            </div>
+
+            <div class="amount-section">
+
+                <p class="label">Amount to pay</p>
+
+                <div class="amount">
+                    ₹<span id="amount">0</span>
+                </div>
+
+            </div>
+
+            <a
+                id="payButton"
+                class="pay-button"
+                href="#"
+            >
+                Pay via UPI
+            </a>
+
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+            <button
+                id="copyButton"
+                class="secondary-button"
+            >
+                Copy UPI ID
+            </button>
+
+            <div class="upi-id" id="upiId">
+                Rishabh.Bansal777@okaxis
+            </div>
+
+            <div class="qr-section">
+
+                <p class="qr-title">
+                    Scan to pay
+                </p>
+
+                <img
+                    id="qrCode"
+                    class="qr-code"
+                    alt="UPI QR Code"
+                >
+
+                <p class="qr-help">
+                    Scan this QR code using any UPI app
+                </p>
+
+            </div>
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+            <p class="footer">
+                UPI payment • No payment gateway
+            </p>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
