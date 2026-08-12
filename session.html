@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Create Badminton Session</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="payment-card">
+
+            <div class="logo">
+                🏸
+            </div>
+
+            <h1>Create Badminton Session</h1>
+
+            <p class="subtitle">
+                Create one payment link for your entire session
+            </p>
+
+
+            <!-- Session details -->
+
+            <div class="form-section">
+
+                <label for="sessionName">
+                    Session Name
+                </label>
+
+                <input
+                    type="text"
+                    id="sessionName"
+                    autocomplete="off"
+                >
+
+
+                <label for="sessionDate">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="sessionDate"
+                >
+
+
+                <!-- Players -->
+
+                <div class="players-header">
+
+                    <label>
+                        Players
+                    </label>
+
+                    <span
+                        id="playerCount"
+                        class="player-count"
+                    >
+                        0 players
+                    </span>
+
+                </div>
+
+
+                <div id="playersList">
+
+                    <!-- Player rows will be added here -->
+
+                </div>
+
+
+                <button
+                    id="addPlayerButton"
+                    class="add-player-button"
+                    type="button"
+                >
+                    <span class="button-icon">+</span>
+                    <span>Add Player</span>
+                </button>
+
+
+                <!-- Total -->
+
+                <div class="session-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="totalAmount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <!-- Generate -->
+
+                <button
+                    id="generateSessionButton"
+                    class="pay-button"
+                    type="button"
+                >
+                    <span class="button-icon">↗</span>
+                    <span>Create Session</span>
+                </button>
+
+            </div>
+
+
+            <!-- Result -->
+
+            <div
+                id="sessionResult"
+                class="result"
+            >
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h2 class="result-title">
+                    Session Created
+                </h2>
+
+                <p class="result-description">
+                    Share this link with everyone in your badminton session.
+                </p>
+
+
+                <div
+                    id="sessionLink"
+                    class="generated-link"
+                ></div>
+
+
+                <button
+                    id="copySessionLinkButton"
+                    class="secondary-button"
+                    type="button"
+                >
+                    <span class="button-icon">▣</span>
+                    <span>Copy Session Link</span>
+                </button>
+
+
+                <a
+                    id="openSessionButton"
+                    class="secondary-button open-button"
+                    href="#"
+                    target="_blank"
+                >
+                    <span class="button-icon">↗</span>
+                    <span>Open Session</span>
+                </a>
+
+
+                <div
+                    id="sessionMessage"
+                    class="message"
+                ></div>
+
+            </div>
+
+
+            <p class="footer">
+                UPI payment • No payment gateway
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script src="session.js"></script>
+
+</body>
+
+</html>

@@ -7,6 +7,14 @@
     {
       "source": "/generate",
       "destination": "/generator.html"
+    },
+    {
+      "source": "/session",
+      "destination": "/session.html"
+    },
+    {
+      "source": "/session-view",
+      "destination": "/session-view.html"
     }
   ]
 }

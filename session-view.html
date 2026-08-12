@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Badminton Payment</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="payment-card session-view-card">
+
+            <div class="logo">
+                🏸
+            </div>
+
+            <h1 id="sessionTitle">
+                Badminton Payment
+            </h1>
+
+            <p
+                id="sessionDate"
+                class="subtitle"
+            ></p>
+
+
+            <p class="session-instruction">
+                Select your name to continue
+            </p>
+
+
+            <div
+                id="sessionPlayers"
+                class="session-players"
+            >
+                <!-- Players will be added by JavaScript -->
+            </div>
+
+
+            <div class="session-view-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="sessionTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div
+                id="sessionError"
+                class="session-error"
+            >
+                <!-- Error message -->
+            </div>
+
+
+            <p class="footer">
+                UPI payment • No payment gateway
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script src="session-view.js"></script>
+
+</body>
+
+</html>
