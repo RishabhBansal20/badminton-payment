@@ -282,14 +282,13 @@ function openPaymentPage(
     amount
 ) {
 
-    const isLocal =
-        window.location.hostname === "localhost" ||
-        window.location.hostname === "127.0.0.1";
+    const isProduction =
+        window.location.hostname.includes("vercel.app");
 
     const paymentPath =
-        isLocal
-            ? "/"
-            : "/pay";
+        isProduction
+            ? "/pay"
+            : "/";
 
     const url =
         new URL(

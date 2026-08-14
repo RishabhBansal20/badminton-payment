@@ -44,8 +44,14 @@ function addPlayer() {
     const row =
         document.createElement("div");
 
-    row.className =
-        "player-row";
+    row.className = "player-row";
+
+
+    const uniqueId =
+        Date.now() +
+        Math.random()
+            .toString(36)
+            .substring(2, 8);
 
 
     row.innerHTML = `
@@ -53,16 +59,25 @@ function addPlayer() {
         <input
             type="text"
             class="player-name"
+            id="player-name-${uniqueId}"
+            name="player-name-${uniqueId}"
             placeholder="Player name"
-            autocomplete="off"
+            autocomplete="new-password"
+            autocorrect="off"
+            autocapitalize="words"
+            spellcheck="false"
         >
 
         <input
             type="number"
             class="player-amount"
+            id="player-amount-${uniqueId}"
+            name="player-amount-${uniqueId}"
             placeholder="Amount"
             min="1"
-            step="0.01"
+            step="1"
+            inputmode="numeric"
+            autocomplete="new-password"
         >
 
         <button
@@ -79,20 +94,48 @@ function addPlayer() {
     playersList.appendChild(row);
 
 
+    // Get the newly created inputs
+
+    const nameInput =
+        row.querySelector(".player-name");
+
+    const amountInput =
+        row.querySelector(".player-amount");
+
+
+    // Explicitly clear them
+
+    nameInput.value = "";
+    amountInput.value = "";
+
+
+    // Prevent browser autofill/restoration
+
+    nameInput.setAttribute(
+        "autocomplete",
+        "new-password"
+    );
+
+    amountInput.setAttribute(
+        "autocomplete",
+        "new-password"
+    );
+
+
     // Listen for changes
 
-    row.querySelector(".player-name")
-        .addEventListener(
-            "input",
-            updateSummary
-        );
+    nameInput.addEventListener(
+        "input",
+        updateSummary
+    );
 
-    row.querySelector(".player-amount")
-        .addEventListener(
-            "input",
-            updateSummary
-        );
+    amountInput.addEventListener(
+        "input",
+        updateSummary
+    );
 
+
+    // Remove player
 
     row.querySelector(".remove-player")
         .addEventListener(
@@ -311,22 +354,25 @@ generateSessionButton.addEventListener(
             );
 
 
-        // Create URL
+        // Create session URL
 
-        const isLocal =
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1";
+        const isProduction =
+            window.location.hostname.includes(
+                "vercel.app"
+            );
 
-const sessionPath =
-    isLocal
-        ? "/session-view.html"
-        : "/session-view";
 
-const url =
-    new URL(
-        sessionPath,
-        window.location.origin
-    );
+        const sessionPath =
+            isProduction
+                ? "/session-view"
+                : "/session-view.html";
+
+
+        const url =
+            new URL(
+                sessionPath,
+                window.location.origin
+            );
 
 
         url.searchParams.set(

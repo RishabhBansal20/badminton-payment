@@ -1490,3 +1490,668 @@ input[type="number"] {
     }
 
 }
+/* =========================================
+   MOBILE RESPONSIVENESS FIX
+   ========================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 14px;
+}
+
+.payment-card {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.payment-card input,
+.payment-card button,
+.payment-card select {
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 10px;
+    }
+
+    .payment-card {
+        width: 100%;
+        padding: 26px 16px;
+        border-radius: 22px;
+    }
+
+    .payment-card h1 {
+    font-size: 23px;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    .form-section input {
+        width: 100%;
+    }
+
+    .player-row {
+        width: 100%;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            82px
+            36px;
+
+        gap: 5px;
+    }
+
+    .player-row input {
+        height: 48px;
+
+        min-width: 0;
+
+        padding: 10px 11px;
+
+        font-size: 14px;
+    }
+
+    .remove-player {
+        width: 36px;
+        min-width: 36px;
+        height: 48px;
+    }
+
+    input[type="date"] {
+        width: 100%;
+    }
+
+    .session-total {
+        width: 100%;
+    }
+}
+/* =========================================
+   MOBILE DATE INPUT FIX
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    input[type="date"] {
+        display: block;
+
+        width: 100%;
+        max-width: 100%;
+
+        height: 48px;
+
+        min-height: 48px;
+
+        padding: 10px 14px;
+
+        margin: 0;
+
+        box-sizing: border-box;
+
+        font-family: inherit;
+        font-size: 15px;
+        font-weight: 400;
+
+        line-height: 1.2;
+
+        color: #172033;
+
+        background: #ffffff;
+
+        border: 1px solid #cfd6df;
+
+        border-radius: 12px;
+
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    input[type="date"]::-webkit-date-and-time-value {
+        text-align: left;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        margin-left: auto;
+        opacity: 0.65;
+    }
+}
+
+/* =========================================
+   FINAL RESPONSIVE FOUNDATION
+   ========================================= */
+
+/* Make sizing predictable everywhere */
+
+html {
+    width: 100%;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    min-height: 100dvh;
+
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding:
+        clamp(12px, 3vw, 32px);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* Main content */
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    min-width: 0;
+
+    margin: 0 auto;
+}
+
+
+/* Card */
+
+.payment-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    padding:
+        clamp(24px, 5vw, 36px)
+        clamp(16px, 5vw, 30px);
+}
+
+
+/* All form controls must respect parent width */
+
+.payment-card input,
+.payment-card button,
+.payment-card a,
+.payment-card select {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+
+/* =========================================
+   PHONE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        align-items: flex-start;
+
+        padding:
+            12px 10px;
+    }
+
+    .container {
+        max-width: 500px;
+    }
+
+    .payment-card {
+        border-radius: 22px;
+
+        padding:
+            26px 16px;
+    }
+
+    h1 {
+        font-size: clamp(
+            22px,
+            6vw,
+            27px
+        );
+
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        font-size: 15px;
+
+        line-height: 1.45;
+    }
+
+
+    /* Standard inputs */
+
+    .form-section input {
+        width: 100%;
+        max-width: 100%;
+
+        height: 48px;
+
+        padding:
+            10px 13px;
+
+        font-size: 15px;
+    }
+
+
+    /* Date */
+
+    .form-section input[type="date"] {
+
+        width: 100%;
+        max-width: 100%;
+
+        height: 48px;
+        min-height: 48px;
+
+        padding:
+            10px 13px;
+
+        margin: 0;
+
+        box-sizing: border-box;
+
+        font-family: inherit;
+        font-size: 15px;
+        font-weight: 400;
+
+        line-height: 1.2;
+
+        -webkit-appearance: none;
+        appearance: none;
+
+        border-radius: 12px;
+    }
+
+
+    /* Player rows */
+
+    .player-row {
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            82px
+            36px;
+
+        gap: 5px;
+    }
+
+    .player-row input {
+
+        min-width: 0;
+
+        width: 100%;
+
+        height: 48px;
+
+        padding:
+            10px 11px;
+
+        font-size: 14px;
+    }
+
+    .remove-player {
+
+        width: 36px;
+        min-width: 36px;
+
+        height: 48px;
+    }
+
+
+    /* Add player */
+
+    .add-player-button {
+
+        width: 100%;
+        max-width: 100%;
+
+        min-height: 48px;
+    }
+
+
+    /* Totals */
+
+    .session-total,
+    .session-view-total {
+
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    body {
+        padding:
+            8px;
+    }
+
+    .payment-card {
+
+        padding:
+            22px 13px;
+
+        border-radius: 20px;
+    }
+
+    .player-row {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            72px
+            34px;
+
+        gap: 4px;
+    }
+
+    .player-row input {
+
+        padding:
+            9px 9px;
+
+        font-size: 13px;
+    }
+
+    .remove-player {
+
+        width: 34px;
+        min-width: 34px;
+    }
+}
+
+
+/* =========================================
+   LANDSCAPE PHONES
+   ========================================= */
+
+@media (orientation: landscape)
+       and (max-height: 600px) {
+
+    body {
+
+        align-items: flex-start;
+
+        padding:
+            12px;
+    }
+
+    .container {
+
+        max-width: 500px;
+
+        margin:
+            0 auto;
+    }
+
+    .payment-card {
+
+        padding:
+            20px 24px;
+
+        border-radius: 20px;
+    }
+
+
+    /* Reduce vertical space */
+
+    .logo {
+
+        width: 46px;
+        height: 46px;
+
+        margin-bottom: 9px;
+
+        font-size: 25px;
+    }
+
+    h1 {
+
+        font-size: 22px;
+
+        line-height: 1.15;
+    }
+
+    .subtitle {
+
+        margin-top: 5px;
+
+        font-size: 13px;
+
+        line-height: 1.35;
+    }
+
+
+    /* Form spacing */
+
+    .form-section {
+
+        margin-top: 18px;
+    }
+
+    .form-section label {
+
+        margin-top: 12px;
+
+        margin-bottom: 6px;
+
+        font-size: 13px;
+    }
+
+
+    /* Inputs */
+
+    .form-section input {
+
+        height: 44px;
+
+        padding:
+            8px 12px;
+
+        font-size: 14px;
+    }
+
+
+    .form-section input[type="date"] {
+
+        height: 44px;
+
+        min-height: 44px;
+    }
+
+
+    /* Players */
+
+    .player-row {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            82px
+            36px;
+
+        gap: 5px;
+
+        margin-bottom: 7px;
+    }
+
+    .player-row input {
+
+        height: 44px;
+
+        padding:
+            8px 10px;
+    }
+
+    .remove-player {
+
+        width: 36px;
+        min-width: 36px;
+
+        height: 44px;
+    }
+
+
+    /* Add player */
+
+    .add-player-button {
+
+        height: 44px;
+
+        min-height: 44px;
+
+        margin-top: 4px;
+    }
+
+
+    /* Total */
+
+    .session-total {
+
+        margin-top: 14px;
+
+        padding:
+            12px 14px;
+    }
+
+
+    /* Primary button */
+
+    .form-section .pay-button {
+
+        min-height: 48px;
+
+        margin-top: 16px;
+    }
+}
+
+
+/* =========================================
+   TABLETS / SMALL LAPTOPS
+   ========================================= */
+
+@media (min-width: 601px)
+       and (max-width: 1000px) {
+
+    .container {
+
+        max-width: 500px;
+    }
+
+    .payment-card {
+
+        padding:
+            32px 30px;
+    }
+}
+
+
+/* =========================================
+   LARGE SCREENS
+   ========================================= */
+
+@media (min-width: 1200px) {
+
+    .container {
+
+        max-width: 500px;
+    }
+
+    .payment-card {
+
+        padding:
+            38px 32px;
+    }
+}
+
+/* =========================================
+   iPHONE LANDSCAPE DATE INPUT FIX
+   ========================================= */
+
+@media (orientation: landscape)
+       and (max-height: 600px) {
+
+    .form-section input[type="date"] {
+        width: 100%;
+        max-width: 100%;
+
+        height: 44px !important;
+        min-height: 44px !important;
+        max-height: 44px !important;
+
+        box-sizing: border-box;
+
+        padding: 8px 12px !important;
+
+        margin: 0;
+
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+
+        line-height: 1.2;
+
+        color: #172033;
+
+        background: #ffffff;
+
+        border: 1px solid #cfd6df;
+        border-radius: 12px;
+
+        -webkit-appearance: none !important;
+        appearance: none !important;
+    }
+
+    .form-section input[type="date"]::-webkit-date-and-time-value {
+        text-align: left;
+        height: 100%;
+        line-height: 1.2;
+    }
+
+    .form-section input[type="date"]::-webkit-datetime-edit {
+        padding: 0;
+        line-height: 1.2;
+    }
+
+    .form-section input[type="date"]::-webkit-calendar-picker-indicator {
+        margin-left: auto;
+        opacity: 0.65;
+    }
+}
