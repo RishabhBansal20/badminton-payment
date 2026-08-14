@@ -2155,3 +2155,7 @@ body {
         opacity: 0.65;
     }
 }
+/* Hide generated session URL */
+#sessionLink {
+    display: none !important;
+}

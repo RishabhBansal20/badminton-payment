@@ -388,7 +388,7 @@ generateSessionButton.addEventListener(
         // Display result
 
         sessionLink.textContent =
-            link;
+        link;
 
         openSessionButton.href =
             link;
