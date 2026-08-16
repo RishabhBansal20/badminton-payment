@@ -57,7 +57,7 @@ function initializePayment() {
         .textContent = formatAmount(amount);
 
 
-    // Build UPI payment URI
+    // Build generic UPI payment URI
 
     const upiLink =
         buildUpiLink(
@@ -68,19 +68,49 @@ function initializePayment() {
         );
 
 
-    // Pay button
+    // Detect iOS
+
+    const isIOS =
+        /iPad|iPhone|iPod/.test(
+            navigator.userAgent
+        ) ||
+        (
+            navigator.platform === "MacIntel" &&
+            navigator.maxTouchPoints > 1
+        );
+
 
     const payButton =
-        document.getElementById("payButton");
+        document.getElementById(
+            "payButton"
+        );
 
-    payButton.href = upiLink;
+
+    if (isIOS) {
+
+        setupIOSPaymentOptions(
+            amount,
+            playerName
+        );
+
+    } else {
+
+        // Android / other platforms
+        // Keep existing generic UPI flow
+
+        payButton.href =
+            upiLink;
+
+        payButton.style.display =
+            "flex";
+
+    }
 
 
-    // Generate QR code
+    // QR remains universal
 
     generateQRCode(upiLink);
 }
-
 
 // --------------------------------------------------
 // Build UPI deep link
@@ -112,6 +142,74 @@ function buildUpiLink(
     return `upi://pay?${params.toString()}`;
 }
 
+function setupIOSPaymentOptions(
+    amount,
+    playerName
+) {
+
+    const payButton =
+        document.getElementById(
+            "payButton"
+        );
+
+    const iosOptions =
+        document.getElementById(
+            "iosPaymentOptions"
+        );
+
+
+    // Hide generic UPI button on iOS
+
+    payButton.style.display =
+        "none";
+
+
+    // Show iOS payment options
+
+    iosOptions.style.display =
+        "block";
+
+
+    const paymentParams =
+        new URLSearchParams({
+
+            pa: UPI_ID,
+
+            pn: PAYEE_NAME,
+
+            am: Number(amount).toFixed(2),
+
+            cu: "INR",
+
+            tn:
+                `Badminton payment - ${playerName}`
+
+        });
+
+
+    // Google Pay
+
+    document.getElementById(
+        "googlePayButton"
+    ).href =
+        `gpay://upi/pay?${paymentParams.toString()}`;
+
+
+    // PhonePe
+
+    document.getElementById(
+        "phonePeButton"
+    ).href =
+        `phonepe://upi/pay?${paymentParams.toString()}`;
+
+
+    // Paytm
+
+    document.getElementById(
+        "paytmButton"
+    ).href =
+        `paytm://upi/pay?${paymentParams.toString()}`;
+}
 
 // --------------------------------------------------
 // Format amount

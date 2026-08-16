@@ -2159,3 +2159,33 @@ body {
 #sessionLink {
     display: none !important;
 }
+
+/* --------------------------------------------------
+   iOS Payment Options
+-------------------------------------------------- */
+
+.ios-payment-options {
+    display: none;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.ios-payment-title {
+    margin: 0 0 12px;
+    text-align: center;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.ios-pay-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.ios-pay-button:last-child {
+    margin-bottom: 0;
+}
